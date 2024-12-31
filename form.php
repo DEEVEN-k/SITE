@@ -1,7 +1,14 @@
 <?php
 session_start();
 
-// Initialisation du panier
+// Vérification si l'utilisateur est connecté
+if (!isset($_SESSION['email'])) {
+    // Si l'utilisateur n'est pas connecté, on le redirige vers la page de connexion
+    header("Location: index.php");
+    exit;
+}
+
+// Initialisation du panier si ce n'est pas déjà fait
 if (!isset($_SESSION['panier'])) {
     $_SESSION['panier'] = [];
 }
@@ -23,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_article'])) {
     $prix = (float)$_POST['prix'];
     $quantite = (int)$_POST['quantite'];
 
+    // Ajouter ou mettre à jour l'article dans le panier
     if (isset($_SESSION['panier'][$id_article])) {
         $_SESSION['panier'][$id_article]['quantite'] += $quantite;
     } else {
@@ -41,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_article'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="MTA.css">
-    <title>Acer aspire 15 corei3 'g ram ssd 256gb.</title>
+    <title>Acer Aspire 15 Core i3 8Go RAM SSD 256GB</title>
     <style>
         .normal {
             display: inline-block;
@@ -100,34 +108,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_article'])) {
     </style>
 </head>
 <body>
-    <h1>Acer aspire 15 corei3 8Go ram ssd 256gb</h1>
+    <h1>Acer Aspire 15 Core i3 8Go RAM SSD 256GB</h1>
     
-        <div class="pro-container">
-            <div class="pro">
-                <img src="e-commerce/Acer aspire 15 corei3 'g ram ssd 256gb.jpeg" alt="" style="width: 300px;">
-                <div class="description">
-                    <span>Ordinateur portable</span>
-                    <div class="star"></div>
+    <div class="pro-container">
+        <div class="pro">
+            <img src="e-commerce/Acer aspire 15 corei3 'g ram ssd 256gb.jpeg" alt="Acer Aspire" style="width: 300px;">
+            <div class="description">
+                <span>Ordinateur portable</span>
+                <div class="star">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-alt"></i>
-                   
                 </div>
-    <!-- Formulaire pour ajouter un produit au panier -->
-    <form method="POST" action="">
-        <input type="hidden" name="id_article" value="1">
-        <input type="hidden" name="nom_article" value="Produit A">
-        <input type="hidden" name="prix" value="750.85">
-        <label>Quantité :</label>
-        <input type="number" name="quantite" value="1" min="1">
-        <button type="submit" class="normal" onclick="ouvrirModal()">Acheter</button>
-    </form>
+            </div>
 
-    <!-- Panier -->
+            <!-- Formulaire pour ajouter un produit au panier -->
+            <form method="POST" action="">
+                <input type="hidden" name="id_article" value="1">
+                <input type="hidden" name="nom_article" value="Acer Aspire 15 Core i3 8Go RAM SSD 256GB">
+                <input type="hidden" name="prix" value="750.85">
+                <label>Quantité :</label>
+                <input type="number" name="quantite" value="1" min="1">
+                <button type="submit" class="normal">Acheter</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Affichage du panier -->
     <div class="panier">
-        
         <?php if (!empty($_SESSION['panier'])): ?>
             <ul>
                 <?php foreach ($_SESSION['panier'] as $id => $article): ?>
@@ -172,57 +182,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_article'])) {
         });
         <?php endif; ?>
     </script>
-     <section id="Newsletter" class="section-p1 section-m1" >
-        <div class="newstext">
-            <h4>Soumettez votre email pour etre informé des nouveautés</h4>
-            <p>Nouveaux produits <span>Offres spéciales</span></p>
-           
-        </div>
-        <div class="Form">
-            <input type="email" placeholder="Entrez votre mail" required>
-            <button class="normal">Soumettre</button>
-        </div>
-    </section>
-    <footer class="section-p1" >
-        <div class="col">
-        
-            <h4>Nous Contactez</h4>
-            <p><strong>Adresse</strong> Avedji rond point Limosine</p>
-            <p><strong>Tél</strong>(+228) 93527693 / 99136385 / 96512484</p>
-            <p><strong>Heures</strong> 10:00 - 18:00, Lun - Dim</p>
-            <div class="Follow">
-                <h4>Nous suivre</h4>
-                <div class="icon">
-                   <a href=""><i class="fab fa-facebook-f"></i></a> 
-                    <a href=""><i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i> <i class="fab fa-pinterest-p"></i> <i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <h4>Nous</h4>
-            <a href="#">A propos nous</a>
-            <a href="#">Historique</a>   <a href="#">Confidentialité</a>   <a href="#">Politiques</a>  
-        </div>
-        <div class="col">
-            <h4>Compte</h4>
-            <a href="#">Se connecter</a>
-            <a href="#"> Voir la carte</a>   <a href="#"> Mes listes de souhait</a>   <a href="#"> Suivre ma commande</a>   <a href="#">Aide</a> 
-             </div>
-       <div class="col Install">
-            <h4>Télécharger </h4>
-            <p>Depuis Appstore & PlayStore</p>
-            <div class="row">
-                <img src="e-commerce/app sto.jpg" alt="" width="140px">
-                <img src="e-commerce/play.jpg" alt="" width="140px">
-            </div>
-            <p>Paiement sécurisé</p>
-            <img src="e-commerce/pay.jpg" alt="" width="190px">
-        </div>
-        <div class="copyright">
-            <p>&copy;Deeven 2024 | Tous droits réservés</p>
-        </div>
-    </footer>
-    
-    <script src="MTA.js"></script>
 </body>
 </html>
