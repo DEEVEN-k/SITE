@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MTA.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <title>Golden Palace</title>
+    
+</head>
+<body >
+    <!-- Header -->
+    <section id="header">
+        <a href="#">
+            <img src="" class="logo" alt="Logo" width="100px">
+        </a>
+        <ul id="navbar">
+            <li><a class="active" href="#">ACCUEIL</a></li>
+            <li><a href="#">RESERVATION</a></li>
+            <li><a href="#">NOS HOTELS DE LUXE</a></li>
+            <li><a href="#">JOINDRE UN ASSISTANT</a></li>
+            <li><a href="#">PROMOTION</a></li>
+            <li><a href="javascript:void(0);" onclick="openModal('loginModal', 'index.php')">Se connecter</a></li>
+        </ul>
+    </section>
+
+    <!-- Modales -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <div id="loginFormContent"></div>
+        </div>
+    </div>
+
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('forgotPasswordModal')">&times;</span>
+            <div id="forgotPasswordContent"></div>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <div id="registerContent"></div>
+        </div>
+    </div>
+    <!-- Modale Confidentialité -->
+<div id="privacyModal" class="modal">
+    <div class="modal-contentt">
+        <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+        <div id="privacyContent">
+            <!-- Contenu chargé dynamiquement -->
+        </div>
+    </div>
+</div>
+
+<!-- Modale Conditions -->
+<div id="termsModal" class="modal">
+    <div class="modal-contentt">
+        <span class="close" onclick="closeModal('termsModal')">&times;</span>
+        <div id="termsContent">
+            <!-- Contenu chargé dynamiquement -->
+        </div>
+    </div>
+</div>
+<div id="resetModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('resetModal')">&times;</span>
+        <div id="resetContent">
+            <!-- Contenu chargé dynamiquement -->
+        </div>
+    </div>
+</div>
+<div id="resetLinkModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('resetLinkModal')">&times;</span>
+        <h2>Confirmer l'envoi</h2>
+        <p>Êtes-vous sûr de vouloir envoyer le lien de réinitialisation ?</p>
+        <button onclick="submitForm()">Oui, envoyer</button>
+        <button onclick="closeModal('resetLinkModal')">Annuler</button>
+    </div>
+</div>
+
+
+
+    
+    <!-- Feature Section -->
+    <section id="feature">
+        <div class="fe-box">
+            <h1>LUXURY PALACE</h1>
+            <img src="../SITE/Hôtel/Outer look.jpg" alt="Luxury Palace" style="width: 250px;">
+            <a href="pc.html"><b>Nous découvrir</b></a>
+        </div>
+        <div class="fe-box">
+            <h1>HOTEL ZORAYAH</h1>
+            <img src="../SITE/Hôtel/ -8.jpg" alt="Hotel Zorayah" style="width: 250px;">
+            <a href="moni.html"><b>Nous découvrir</b></a>
+        </div>
+        <div class="fe-box">
+            <h1>GOLDCOAST HOTEL</h1>
+            <img src="../SITE/HT/4a8516f7-7928-47dd-bf0a-73a50ce171af.jpeg" alt="Goldcoast Hotel" style="width: 250px;">
+            <a href="uc.html"><b>Nous découvrir</b></a>
+        </div>
+        <div class="fe-box">
+            <h1>HOTEL INAYA</h1>
+            <img src="../SITE/HT/b4f8e481-4d9f-46b9-a00d-30789f63999c.jpeg" alt="Hotel Inaya" style="width: 250px;">
+            <a href="uc.html"><b>Nous découvrir</b></a>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="Newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Soumettez votre email pour être informé des nouveautés</h4>
+            <p>Nouveaux produits <span>Offres spéciales</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Entrez votre email">
+            <button class="normal">S'abonner</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Nous Contactez</h4>
+            <p><strong>Adresse:</strong> Avedji rond point Limosine</p>
+            <p><strong>Tél:</strong> (00228) 000000000</p>
+            <p><strong>Heures:</strong> 10:00 - 18:00, Lun - Dim</p>
+            <h4>Nous suivre</h4>
+            <div class="icon">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Nous</h4>
+            <a href="#">A propos nous</a>
+            <a href="#">Historique</a>
+            <a href="javascript:void(0);" onclick="openModal('privacyModal', 'politique_confidentialite.html')">Confidentialité</a>
+            <a href="javascript:void(0);" onclick="openModal('termsModal', 'conditions_utilisation.html')">Conditions</a>
+        </div>
+        <div class="col">
+            <h4>Activités</h4>
+           
+            <a href="#">Voir nos chambres</a>
+            <a href="#">Mes listes de souhait</a>
+            <a href="#">Réservation</a>
+            <a href="#">Aide</a>
+        </div>
+        <div class="col Install">
+            <h4>Télécharger</h4>
+            <p>Depuis Appstore & PlayStore</p>
+            <div class="row">
+                <img src="e-commerce/app sto.jpg" alt="App Store" width="140px">
+                <img src="e-commerce/play.jpg" alt="Play Store" width="140px">
+            </div>
+            <p>Paiement sécurisé</p>
+            <img src="e-commerce/pay.jpg" alt="Paiement sécurisé" width="190px">
+        </div>
+        <div class="copyright">
+            <b><p>&copy;Deeven 2024 | Tous droits réservés</p></b>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="MTA.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // Fonction pour ouvrir une modale dynamiquement
+      function openModal(modalId, url) {
+    closeAllModals(); // Ferme toutes les autres modales
+    document.body.classList.add('modal-open'); // Désactive le défilement de la page
+
+    $.ajax({
+        url: url,
+        success: function(data) {
+            $('#' + modalId + ' .modal-content > div').html(data); // Charge le contenu
+            $('#' + modalId + ' .modal-contentt > div').html(data);
+            $('#' + modalId).css('display', 'flex').hide().fadeIn(300); // Affiche la modale
+        },
+        error: function() {
+            $('#' + modalId + ' .modal-content > div').html('<p>Contenu temporaire pour test</p>');
+            $('#' + modalId + ' .modal-contentt > div').html('<p>Contenu temporaire pour test</p>');
+            $('#' + modalId).css('display', 'flex').hide().fadeIn(300);
+        }
+    });
+}
+
+function closeModal(modalId) {
+    $('#' + modalId).fadeOut(300, function() {
+        $(this).css('display', 'none');
+        document.body.classList.remove('modal-open'); // Réactive le défilement de la page
+    });
+}
+
+function closeAllModals() {
+    $('.modal').fadeOut(300, function() {
+        $(this).css('display', 'none');
+    });
+    document.body.classList.remove('modal-open'); // Réactive le défilement de la page
+}
+
+
+// Ferme une modale en cliquant à l'extérieur
+$(document).on('click', '.modal', function(e) {
+    if ($(e.target).is('.modal')) {
+        closeModal($(this).attr('id'));
+    }
+});
+
+    
+    // Fonction pour afficher la modale
+    function handleResetLink() {
+        closeAllModals(); // Ferme les autres modales
+        $('#resetLinkModal').css('display', 'flex').hide().fadeIn(300); // Affiche la modale
+    }
+    
+    // Fonction pour fermer une modale
+    function closeModal(modalId) {
+        $('#' + modalId).fadeOut(300, function() {
+            $(this).css('display', 'none');
+        });
+    }
+    
+    // Fonction pour fermer toutes les modales
+    function closeAllModals() {
+        $('.modal').fadeOut(300, function() {
+            $(this).css('display', 'none');
+        });
+    }
+    
+    // Fonction pour soumettre le formulaire
+    function submitForm() {
+        document.getElementById('resetForm').submit(); // Soumet le formulaire
+        closeModal('resetLinkModal'); // Ferme la modale
+    }
+    </script>
+</body>
+</html>

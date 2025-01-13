@@ -1,0 +1,331 @@
+.modal-content {
+    background: #e6ecca;
+    padding: 20px;
+    border-radius: 8px;
+    width: 800px;
+    height: 500px;
+    max-width: 90%;
+    max-height: 80vh; /* Limite la hauteur à 80% de la hauteur de la fenêtre */
+    overflow-y: auto; /* Active le défilement vertical si le contenu dépasse */
+    position: relative;
+    text-align: center;
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espace entre les éléments */
+    margin-top: 150px;
+   
+}
+.modal-contentt {
+    background: #e6ecca;
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px;
+    height: 700px;
+    max-width: 90%;
+    max-height: 80vh; /* Limite la hauteur à 80% de la hauteur de la fenêtre */
+    overflow-y: auto; /* Active le défilement vertical si le contenu dépasse */
+    position: relative;
+    text-align: center;
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 7px 7px 9px rgb(193, 200, 202);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espace entre les éléments */
+    margin-top: 100px;
+    
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #272525;
+}
+.modal-contentt h2 {
+  
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 25px;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+   
+}
+.modal-content form {
+   background: transparent;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+.modal-content  h1{
+ font-size: 30px;
+ font-weight: bold;
+    color:lightslategray;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+
+}
+.modal-content  .V label{
+    display: flex;
+    text-align: start;
+gap: 5px;
+    font-size: 15px;
+
+}
+.modal-content  a{
+    font-size: 15px;
+    font-weight: bold;
+       color:lightslategray;
+       display: flex;
+       justify-content: flex-end;
+     align-items: flex-end;
+   text-decoration: none;
+   }
+   .modal-content  a:hover{
+    color: lightgreen;
+   }
+   .modal-content  .inscrir{
+    display: flex;                /* Active Flexbox */
+    justify-content: center;      /* Centre horizontalement */
+    align-items: center;          /* Centre verticalement */
+
+    text-align: center;  
+}
+
+.modal-content .inscrir p{
+    margin: 0;                    /* Supprime les marges par défaut */
+    display: flex;                /* Utilise Flexbox dans le paragraphe */
+    gap: 5px;                     /* Ajoute un espacement entre le texte et le lien */
+    align-items: center;  
+    font-size: 15px;
+}
+  
+
+.modal-content .inscrir a {
+   color: lightslategray;               /* Couleur du lien */
+   text-decoration: none;        /* Supprime le soulignement */
+   font-weight: bold;
+   font-size: 20px;            /* Gras pour le lien */
+}
+.modal-content .inscrir a:hover{
+    color: lightgreen;
+}
+   
+.modal-content  label{
+   text-align: center;
+   font-size: 25px;
+   color: black;
+   font-weight: bold;
+   margin-top: 5px;
+    
+ }
+ .modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="password"],
+.modal-content input[type="tel"],
+.modal-content input[type="hidden"],
+.modal-content textarea {
+    width: 100%; /* Occupe toute la largeur du conteneur */
+    padding: 10px; /* Espacement interne */
+    margin: 10px 0; /* Espacement externe en haut et en bas */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+    font-size: 16px; /* Taille de police */
+    font-family: Arial, sans-serif; /* Police moderne */
+}
+
+/* Style pour le champ au focus */
+.modal-content input[type="text"]:focus,
+.modal-content input[type="email"]:focus,
+.modal-content input[type="password"]:focus,
+.modal-content input[type="submit"],
+.modal-content input[type="tel"],
+.modal-content input[type="hidden"],
+.modal-content textarea:focus {
+    border-color: #007BFF; /* Bordure bleue au focus */
+    outline: none; /* Supprime la bordure par défaut */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Effet de halo */
+}
+.modal-content input[type="submit"] {
+    background-color: #9afafa; /* Couleur de fond bleu */
+    color: rgb(56, 55, 55);
+    font-weight: bold;
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    font-size: 16px; /* Taille de police */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s ease; /* Effet de transition */
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Effet hover sur les boutons */
+.modal-content input[type="submit"]:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+    color: white;
+    
+}
+.modal-content .password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.modal-content .password-container input {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.modal-content .password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 1.2em;
+}
+.modal-content #telephone {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align:center;
+    display:flex;
+    align-items: center;
+}
+
+
+.modal-contentt p {
+  
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 19px;
+}
+.modal-contentt ul li {
+  
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align:center;
+    font-size: 15px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.modal-contentt button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:first-of-type {
+    background-color: #007BFF;
+    color: #fff;
+}
+.modal-contentt button:first-of-type {
+    background-color: #007BFF;
+    color: #fff;
+}
+.modal-content button:first-of-type:hover {
+    background-color: #0056b3;
+}
+.modal-content button:last-of-type {
+    background-color: #faf8f9;
+    color: #333;
+}
+
+.modal-content button:last-of-type:hover {
+    background-color: #e2e6ea;
+}
+
+.close {
+ position: absolute;
+ top: 10px;
+ right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #007BFF;
+}
+
+
+.modal-content::-webkit-scrollbar {
+    width: 8px; /* Largeur de la barre de défilement */
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #888; /* Couleur de la poignée */
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Couleur au survol */
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Couleur de l'arrière-plan de la barre */
+}
+
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+       font-size: 1.5rem;
+       cursor: pointer;
+       color: #333;
+       transition: color 0.3s ease;
+   }
+   
+   .close:hover {
+       color: #007BFF;
+   }
+   
+   
+   .modal-contentt::-webkit-scrollbar {
+       width: 8px; /* Largeur de la barre de défilement */
+   }
+   
+   .modal-contentt::-webkit-scrollbar-thumb {
+       background-color: #888; /* Couleur de la poignée */
+       border-radius: 4px;
+   }
+   
+   .modal-contentt::-webkit-scrollbar-thumb:hover {
+       background-color: #555; /* Couleur au survol */
+   }
+   
+   .modal-contentt::-webkit-scrollbar-track {
+       background: #f1f1f1; /* Couleur de l'arrière-plan de la barre */
+   }
+   

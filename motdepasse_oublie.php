@@ -11,6 +11,7 @@ $error = "";   // Message en cas d'erreur
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST['email'] ?? '');
 
+    // Validation de l'email
     if (empty($email)) {
         $error = "Veuillez entrer votre adresse email.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -20,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $db_host = "localhost";
         $db_user = "root";
         $db_password = "";
-        $db_name = "Siteweb_users";
+        $db_name = "Siteweb_user";
 
         $con = new mysqli($db_host, $db_user, $db_password, $db_name);
 
@@ -48,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->execute();
 
             // Générer le lien de réinitialisation
-            $reset_link = "http://localhost:8080/SITE/reset_password.php?token=" . $token;
+            $reset_link = "http://localhost/Gestion_Hotels/SITE/reset_password.php?token=" . $token;
 
             // Envoi de l'email avec PHPMailer
             $mail = new PHPMailer(true);
@@ -75,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $mail->isHTML(true);
                 $mail->Subject = 'Réinitialisation de votre mot de passe';
                 $mail->Body = "Cliquez sur ce lien pour réinitialiser votre mot de passe : 
-                    <a href='$reset_link'>$reset_link</a>";
+                    <a href='$reset_link'>Réinitialiser mon mot de passe</a>";
 
                 $mail->send();
                 $ms = "Si un compte est associé à cette adresse, un email de réinitialisation a été envoyé.";
@@ -100,9 +101,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mot de passe oublié</title>
-    <link rel="stylesheet" href="ind.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page">
     <section>
         <h1>Mot de passe oublié</h1>
 
@@ -117,11 +118,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php endif; ?>
 
         <!-- Formulaire -->
-        <form action="" method="POST">
-            <label for="email">Adresse Email</label>
-            <input type="email" id="email" name="email"  placeholder="Entrez votre email">
-            <input type="submit" name="bouton" value="Envoyer le lien de réinitialisation">
-        </form>
+        <form id="resetForm" action="reset_password.php" method="POST">
+    <input type="email" name="email" placeholder="Entrez votre email" required>
+    <input 
+        type="button" 
+        name="bouton" 
+        value="Envoyer le lien de réinitialisation" 
+        onclick="handleResetLink()">
+</form>
+
+
     </section>
 </body>
 </html>

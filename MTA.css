@@ -6,40 +6,95 @@
     box-sizing: border-box;
     font-family: 'Spartan', sans-serif;
     
-    
+}/* Styles pour la modale */
+/* Désactive le défilement et fixe la hauteur du body */
+/* Ajout d'une marge droite pour compenser le décalage */
+body.modal-open {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width, 0); /* Ajuste l'espace pour la barre de défilement */
 }
-h1{
+
+/* Définit la largeur de la barre de défilement (utilisée en JavaScript) */
+:root {
+    --scrollbar-width: 0px;
+}
+
+/* Modale : position fixe, pleine largeur et hauteur */
+.modal {
+    display: none; /* Masquer la modale par défaut */
+    position: fixed; /* Position fixe pour ne pas affecter la mise en page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    z-index: 1000; /* Modale au-dessus de tout le reste */
+}
+
+/* Contenu de la modale : centré et avec une taille définie */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%; /* Ajuster la largeur selon les besoins */
+    max-width: 500px;
+    position: relative; /* Assurez-vous que la modale reste bien dans la fenêtre */
+}
+
+/* Bouton de fermeture */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* S'assurer que le contenu de la page principale ne se déforme pas */
+body {
+    width: 100%;
+    background: lightgray;
+    overflow: visible; /* Permet au corps de défiler si nécessaire */
+}
+
+
+/* Autres styles de la page principale (conservés) */
+h1 {
     font-size: 25px;
     line-height: 64px;
     color: #222;
 }
-h2{
+h2 {
     font-size: 46px;
     line-height: 54px;
     color: #222;
 }
-h4{
+h4 {
     font-size: 18px;
     color: #222;
-    
 }
-h6{
+h6 {
     font-weight: 700;
     font-size: 12px;
-    
 }
-p{
+p {
     font-size: 16px;
     color: #465b52;
     margin: 15px 0 20px 0;
 }
 
-    
-    body{
-        width: 100%;
-        background:lightgray;
-        
-    }
     
     #header{
         display: flex;
@@ -170,6 +225,8 @@ justify-content: space-between;
     display: flex;
     border-radius: 10px;
     transition: 0,4s ease ;
+    padding: 15px 15px;
+
 
 }
 #feature .fe-box img:hover{
@@ -181,11 +238,12 @@ justify-content: space-between;
     padding: 9px 8px 6px 8px;
     line-height: 1;
     border-radius: 4px;
-    color: #088178;
-    background-color:#7e24f3 ;
+    color: #f7fcfb;
+    background-color:#406462 ;
     transition: 0,3s ease;
     cursor:pointer;
 }
+  
 #feature .fe-box a:hover{
     background: violet;
 }

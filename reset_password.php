@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Échec de la connexion : " . $con->connect_error);
     }
 
+    // Réinitialisation du mot de passe
     if ($action === 'reset') {
         if (empty($token) || empty($modp) || empty($modp_confirm)) {
             $erreur = "Veuillez remplir tous les champs.";
@@ -71,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 
+    // Renvoi du lien de réinitialisation
     if ($action === 'resend') {
         if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $erreur = "Email introuvable ou invalide.";
@@ -132,10 +134,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="ind.css">
+    <link rel="stylesheet" href="style.css">
     <title>Réinitialisation du mot de passe</title>
 </head>
-<body>
+<body class="page">
     <section>
         <h1>Réinitialiser le mot de passe</h1>
 
@@ -165,7 +167,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="password" id="modp" name="modp" required>
                 <label for="modp_confirm">Confirmez le Mot de Passe</label>
                 <input type="password" id="modp_confirm" name="modp_confirm" required>
-                <input type="submit" value="Réinitialiser" name="bouton">
+                <input 
+    type="button" 
+    value="Réinitialiser" 
+    name="bouton" 
+    id="resetButton" 
+    onclick="openModal('resetModal', 'reset_password.php')">
+
             </form>
 
             <!-- Formulaire pour réenvoyer le lien -->
